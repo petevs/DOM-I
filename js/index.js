@@ -60,11 +60,13 @@ fillMenu();
 
 //CALL TO ACTION
 
+//Function for changing text elements
 function textChange(selector, obj) {
   let element = document.querySelector(selector);
   return (element.textContent = obj);
 }
 
+//function for changing image elements
 function attrChange(selector, obj) {
   let element = document.querySelector(selector);
   return element.setAttribute("src", obj);
@@ -79,5 +81,74 @@ textChange(".cta-text button", siteContent.cta.button);
 //Change hero heroImage
 attrChange("#cta-img", siteContent.cta["img-src"]);
 
+//MAIN content
+//TOP content
+
+//Features
+textChange(
+  ".text-content:nth-of-type(1) h4",
+  siteContent["main-content"]["features-h4"]
+);
+
+//Features siteContent
+textChange(".text-content p", siteContent["main-content"]["features-content"]);
+
+//About
+textChange(
+  ".text-content:nth-of-type(2) h4",
+  siteContent["main-content"]["about-h4"]
+);
+
+//About siteContent
+textChange(
+  ".text-content:nth-of-type(2) p",
+  siteContent["main-content"]["about-content"]
+);
+
 //Image
 attrChange("#middle-img", siteContent["main-content"]["middle-img-src"]);
+
+//Services
+textChange(
+  ".bottom-content .text-content:nth-of-type(1) h4",
+  siteContent["main-content"]["services-h4"]
+);
+
+textChange(
+  ".bottom-content .text-content:nth-of-type(1) p",
+  siteContent["main-content"]["services-content"]
+);
+
+//Product
+textChange(
+  ".bottom-content .text-content:nth-of-type(2) h4",
+  siteContent["main-content"]["product-h4"]
+);
+
+textChange(
+  ".bottom-content .text-content:nth-of-type(2) p",
+  siteContent["main-content"]["product-content"]
+);
+
+//Vision
+textChange(
+  ".bottom-content .text-content:nth-of-type(3) h4",
+  siteContent["main-content"]["vision-h4"]
+);
+
+textChange(
+  ".bottom-content .text-content:nth-of-type(3) p",
+  siteContent["main-content"]["vision-content"]
+);
+
+//Contact
+textChange(".contact h4", siteContent["contact"]["contact-h4"]);
+
+//address
+textChange(".contact p:nth-of-type(1)", siteContent["contact"]["address"]);
+
+//phone
+textChange(".contact p:nth-of-type(2)", siteContent["contact"]["phone"]);
+
+//email
+textChange(".contact p:nth-of-type(3)", siteContent["contact"]["email"]);
