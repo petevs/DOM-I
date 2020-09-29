@@ -79,4 +79,5 @@ textChange(".cta-text button", siteContent.cta.button);
 //Change hero heroImage
 attrChange("#cta-img", siteContent.cta["img-src"]);
 
+//Image
 attrChange("#middle-img", siteContent["main-content"]["middle-img-src"]);
