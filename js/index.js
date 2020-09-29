@@ -60,8 +60,23 @@ fillMenu();
 
 //CALL TO ACTION
 
-//
+function textChange(selector, obj) {
+  let element = document.querySelector(selector);
+  return (element.textContent = obj);
+}
 
-//hero image
-const heroImage = document.querySelector("#cta-img");
-heroImage.setAttribute("src", siteContent.cta["img-src"]);
+function attrChange(selector, obj) {
+  let element = document.querySelector(selector);
+  return element.setAttribute("src", obj);
+}
+
+//Change Headline
+textChange(".cta-text h1", siteContent.cta.h1);
+
+//Change Button
+textChange(".cta-text button", siteContent.cta.button);
+
+//Change hero heroImage
+attrChange("#cta-img", siteContent.cta["img-src"]);
+
+attrChange("#middle-img", siteContent["main-content"]["middle-img-src"]);
