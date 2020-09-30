@@ -53,6 +53,7 @@ function fillMenu() {
     currentMenuItem = currentMenuItem + 1;
     let menuKey = "nav-item-" + currentMenuItem.toString();
     item.textContent = siteContent.nav[menuKey];
+    item.style.color = "green";
   });
 }
 
@@ -72,17 +73,20 @@ function attrChange(selector, obj) {
   return element.setAttribute("src", obj);
 }
 
+//
+
 //Change Headline
-textChange(".cta-text h1", siteContent.cta.h1);
+// textChange(".cta-text h1", siteContent.cta.h1);
+let h1Split = siteContent.cta.h1.split(" ");
+document.querySelector(
+  ".cta-text h1"
+).innerHTML = `${h1Split[0]} <br> ${h1Split[1]} <br> ${h1Split[2]}`;
 
 //Change Button
 textChange(".cta-text button", siteContent.cta.button);
 
 //Change hero heroImage
 attrChange("#cta-img", siteContent.cta["img-src"]);
-
-//MAIN content
-//TOP content
 
 //Features
 textChange(
@@ -152,3 +156,15 @@ textChange(".contact p:nth-of-type(2)", siteContent["contact"]["phone"]);
 
 //email
 textChange(".contact p:nth-of-type(3)", siteContent["contact"]["email"]);
+
+//Prepend Home Link to nav
+let homeLink = document.createElement("a");
+homeLink.textContent = "Home";
+homeLink.style.color = "blue";
+document.querySelector("nav").prepend(homeLink);
+
+//Append Search Link to Nav
+let searchButton = document.createElement("a");
+searchButton.textContent = "Search";
+searchButton.style.color = "green";
+document.querySelector("nav").appendChild(searchButton);
