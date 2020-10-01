@@ -72,8 +72,11 @@ function attrChange(selector, obj) {
   let element = document.querySelector(selector);
   return element.setAttribute("src", obj);
 }
-
-//
+//function for changing style
+function styleChanger(selector, css) {
+  let element = document.querySelector(selector);
+  return (element.style.cssText = css);
+}
 
 //Change Headline
 // textChange(".cta-text h1", siteContent.cta.h1);
@@ -168,3 +171,17 @@ let searchButton = document.createElement("a");
 searchButton.textContent = "Search";
 searchButton.style.color = "green";
 document.querySelector("nav").appendChild(searchButton);
+
+//STRETCH
+
+// //change headline color to #EB3A45
+styleChanger(".cta-text h1", "color: #EB3A45");
+
+// //give box shadow to middle image
+styleChanger("#middle-img", "box-shadow: 0px 2px 4px rgba(0,0,0,0.35);");
+
+//Change color to black when click the get started button
+let but = document.querySelector(".cta button");
+but.addEventListener("click", (event) =>
+  styleChanger(".cta-text h1", "color: #000000")
+);
