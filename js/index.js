@@ -185,3 +185,16 @@ let but = document.querySelector(".cta button");
 but.addEventListener("click", (event) =>
   styleChanger(".cta-text h1", "color: #000000")
 );
+
+//function for changing style
+function styleChanger(selector, css) {
+  let element = document.querySelector(selector);
+  return (element.style.cssText = css);
+}
+
+// ///BELOW HERE
+// function styleChangerTwo(selector, styleType, value) {
+//   document.querySelector(selector).style[styleType] = value;
+// }
+
+// styleChangerTwo(".cta-text h1", "fontSize", "3rem");
